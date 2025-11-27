@@ -6,3 +6,18 @@
     min-height: 100vh;
     margin: 0;
   }
+  .main-layout {
+ display: flex;
+flex-direction: column; /* Uno debajo del otro (Header, Body, Footer) */
+height: 100vh; /* 100% de la altura de la ventana */
+margin: 0;
+padding: 0;
+overflow: hidden; /* Evita scroll en el contenedor principal */
+}
+.sidebar-area {
+width: 250px;
+flex: 0 0 250px;
+background-color: #f8f9fa;
+border-right: 1px solid #ddd;
+overflow-y: auto; 
+}

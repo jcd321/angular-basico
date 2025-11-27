@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-header',
+  imports: [],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
-export class Home {
-  titulo: string = 'Mi Primera App Angular';
+export class Header {
 
-  
+  titulo = 'Marketing Digital';
+
 }

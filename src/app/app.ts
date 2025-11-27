@@ -1,10 +1,5 @@
 import { Component, signal } from '@angular/core';
 
-import { Main } from "./components/main/main";
-
-import { RouterOutlet } from "../../node_modules/@angular/router/types/_router_module-chunk";
-import { Menu } from "./components/menu/menu";
-import { CicloVida } from "./components/ciclo-vida/ciclo-vida";
 import { Home } from "./Componente2/home/home";
 import { Nabvar } from "./Componente2/nabvar/nabvar";
 import { Header } from "./Componente2/header/header";

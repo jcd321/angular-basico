@@ -1,16 +1,47 @@
-<div>
+@if(modoOscuro) {
+  <div class="modo-oscuro">
     <h1>Bienvenido a  mi pagina de Marketplace</h1>
     <p>Estos son todos nuestros servicios</p>
-    <ul>
-        <li>Servicios de actualizacion</li>
-        <li>Servicios de mantenimiento</li>
-        <li>Servicios de soporte tecnico</li>
-        <li>Servicios de consultoria</li>
-    </ul>
-    
-  <button [disabled]="boton1Desactivado" (click)="saludar()">Botón 1</button>
-    
-  <button [disabled]="boton2Desactivado" (click)="saludar2()">Botón 2</button>
 
+    <div class="buttons">
+      <button (click)="mostrarServicios()"> Mostrar Servicios</button>
+      <button (click)="darkClick()">Dark</button>
+    </div>
+      
+    @if(servicio){
+      @for(servicio of servicios; track $index){
+        <ul>
+          <li>{{servicio}}</li>
+        </ul>
+      }
+    }
+    
+    <!-- <div class="buttons">
+      <button [disabled]="Desactivado1" (click)="saludar()">Botón 1</button>
+      <button [disabled]="Desactivado2" (click)="saludar2()">Botón 2</button>
+    </div> -->
+  </div>
+} @else {
+  <div>
+    <h1>Bienvenido a  mi pagina de Marketplace</h1>
+    <p>Estos son todos nuestros servicios</p>
 
-</div>
+    <div class="buttons">
+      <button (click)="mostrarServicios()"> Mostrar Servicios</button>
+      <button (click)="darkClick()">Dark</button>
+    </div>
+      
+    @if(servicio){
+      @for(servicio of servicios; track $index){
+        <ul>
+          <li>{{servicio}}</li>
+        </ul>
+      }
+    }
+    
+    <!-- <div class="buttons">
+      <button [disabled]="Desactivado1" (click)="saludar()">Botón 1</button>
+      <button [disabled]="Desactivado2" (click)="saludar2()">Botón 2</button>
+    </div> -->
+  </div>
+}

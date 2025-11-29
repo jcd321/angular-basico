@@ -11,11 +11,17 @@ ul{
     margin-left: 10px;
     margin-right: 10px; 
 }
-button {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+.buttons {
+    margin: 10px;
     padding: 10px;
-
 }
+
+.buttons button {
+    margin: 0 5px;
+}
+
+.modo-oscuro {
+    background-color: #333;
+    color: white;
+}
+

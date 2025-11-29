@@ -12,6 +12,4 @@ export class CicloVida implements OnInit{
     console.log('Ciclo de vida: Componente inicializado');
   }
 
-
-
 }

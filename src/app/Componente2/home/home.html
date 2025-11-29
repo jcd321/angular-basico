@@ -15,6 +15,10 @@
         </ul>
       }
     }
+
+    <div class="buttons">
+      <button (click)="abrirModal()" class="btn-abrir-modal">Abrir Modal</button>
+    </div>
     
     <!-- <div class="buttons">
       <button [disabled]="Desactivado1" (click)="saludar()">Botón 1</button>
@@ -38,6 +42,27 @@
         </ul>
       }
     }
+
+    <div class="buttons">
+      <button (click)="abrirModal()" class="btn-abrir-modal">Abrir Modal</button>
+    </div>
+
+    @if (mostrarAlerta) {
+      <div class="modal-overlay">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Aviso del Sistema</h3>
+            <span class="close-btn" (click)="cerrarAlerta()">&times;</span>
+          </div>
+          <div class="modal-body">
+            <p>{{ mensajeAlerta }}</p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn-cerrar" (click)="cerrarAlerta()">Entendido</button>
+          </div>
+        </div>
+      </div>
+    } 
     
     <!-- <div class="buttons">
       <button [disabled]="Desactivado1" (click)="saludar()">Botón 1</button>

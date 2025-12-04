@@ -1,13 +1,15 @@
 import { Component, signal } from '@angular/core';
-
-import { Home } from "./Componente2/home/home";
-import { Nabvar } from "./Componente2/nabvar/nabvar";
+import { Refactorizar } from "./Componente2/refactorizar/refactorizar";
 import { Header } from "./Componente2/header/header";
-import { Footer } from './Componente2/footer/footer';
+import { Nabvar } from "./Componente2/nabvar/nabvar";
+import { Footer } from "./Componente2/footer/footer";
+import { Home } from "./Componente2/home/home";
+
+
 
 @Component({
   selector: 'app-root-new',
-  imports: [Home, Footer, Nabvar, Header],
+  imports: [Header, Nabvar, Footer, Home],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

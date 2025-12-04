@@ -1,44 +1,181 @@
 div {
-    padding: 10px;
-    margin: 10px;
+    padding: 20px;
+    margin: 0 auto;
     text-align: center;
+    max-width: 800px;
 }
-ul{
+
+h1 {
+    margin: 20px 0;
+    font-size: 2rem;
+}
+
+p {
+    margin: 15px 0 25px 0;
+    font-size: 1.1rem;
+}
+
+.servicios-container {
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 600px;
+}
+
+.lista-servicios {
     text-align: left;
-    display: inline-block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px; 
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
+
+.lista-servicios li {
+    padding: 15px 20px;
+    font-size: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 45px;
+}
+
+.lista-servicios li:last-child {
+    border-bottom: none;
+}
+
+.lista-servicios li::before {
+    content: '✓';
+    position: absolute;
+    left: 15px;
+    color: #28a745;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.lista-servicios li:hover {
+    background-color: #e9ecef;
+    padding-left: 50px;
+    transform: translateX(5px);
+}
+
 .buttons {
-    margin: 10px;
-    padding: 10px;
+    margin: 20px 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .buttons button {
-    margin: 0 5px;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+}
+
+.buttons button:hover {
+    background-color: #e9ecef;
+    transform: translateY(-1px);
 }
 
 .modo-oscuro {
-    background-color: #333;
+    background-color: #1a1a1a;
     color: white;
+    min-height: 100vh;
+}
+
+.modo-oscuro h1 {
+    color: #ffffff;
+}
+
+.modo-oscuro p {
+    color: #e0e0e0;
+}
+
+.modo-oscuro .buttons button {
+    background-color: #444;
+    color: white;
+    border-color: #555;
+}
+
+.modo-oscuro .buttons button:hover {
+    background-color: #555;
+}
+
+.modo-oscuro .lista-servicios {
+    background-color: #2d2d2d;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.modo-oscuro .lista-servicios li {
+    color: #e0e0e0;
+    border-bottom-color: #444;
+}
+
+.modo-oscuro .lista-servicios li:hover {
+    background-color: #3a3a3a;
+}
+
+.modo-oscuro .lista-servicios li::before {
+    color: #4CAF50;
+}
+
+/* Contenedor específico para el botón modal */
+.buttons:has(.btn-abrir-modal) {
+    margin: 30px 0;
+    padding: 20px 0;
 }
 
 /* Botón para abrir modal */
 .btn-abrir-modal {
-    background-color: #28a745;
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 16px 40px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+    text-transform: uppercase;
+    min-width: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-abrir-modal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn-abrir-modal:hover::before {
+    left: 100%;
 }
 
 .btn-abrir-modal:hover {
-    background-color: #218838;
+    background: linear-gradient(135deg, #218838 0%, #1ea080 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.6);
+}
+
+.btn-abrir-modal:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(40, 167, 69, 0.5);
 }
 
 /* Estilos del Modal */

@@ -9,11 +9,13 @@
     </div>
       
     @if(servicio){
-      @for(servicio of servicios; track $index){
-        <ul>
-          <li>{{servicio}}</li>
+      <div class="servicios-container">
+        <ul class="lista-servicios">
+          @for(servicio of alternarVistaService.servicios; track $index){
+            <li>{{servicio}}</li>
+          }
         </ul>
-      }
+      </div>
     }
 
     <div class="buttons">
@@ -21,8 +23,8 @@
     </div>
     
     <!-- <div class="buttons">
-      <button [disabled]="Desactivado1" (click)="saludar()">Botón 1</button>
-      <button [disabled]="Desactivado2" (click)="saludar2()">Botón 2</button>
+      <button [disabled]="saludarService.Desactivado1" (click)="saludarService.saludar()">Botón 1</button>
+      <button [disabled]="saludarService.Desactivado2" (click)="saludarService.saludar2()">Botón 2</button>
     </div> -->
   </div>
 } @else {
@@ -36,18 +38,20 @@
     </div>
       
     @if(servicio){
-      @for(servicio of servicios; track $index){
-        <ul>
-          <li>{{servicio}}</li>
+      <div class="servicios-container">
+        <ul class="lista-servicios">
+          @for(servicio of alternarVistaService.servicios; track $index){
+            <li>{{servicio}}</li>
+          }
         </ul>
-      }
+      </div>
     }
 
     <div class="buttons">
       <button (click)="abrirModal()" class="btn-abrir-modal">Abrir Modal</button>
     </div>
 
-    @if (mostrarAlerta) {
+    @if (alternarVistaService.mostrarAlerta) {
       <div class="modal-overlay">
         <div class="modal-content">
           <div class="modal-header">
@@ -55,7 +59,7 @@
             <span class="close-btn" (click)="cerrarAlerta()">&times;</span>
           </div>
           <div class="modal-body">
-            <p>{{ mensajeAlerta }}</p>
+            <p>{{ alternarVistaService.mensajeAlerta }}</p>
           </div>
           <div class="modal-footer">
             <button class="btn-cerrar" (click)="cerrarAlerta()">Entendido</button>

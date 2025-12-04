@@ -2,10 +2,11 @@
 <header class="main-header">
   <div class="logo">
     <h1>Mi Primera App Angular</h1>
+
   </div>
   
-  <h1>{{titulo}}</h1>
-
+  <div class="card" [ngClass]="{'alerta-roja': tema.dificultad === 'alta','alerta-verde': tema.dificultad === 'baja'}">
+  </div>
 
   <!-- 2. NAV: Bloque de navegación principal -->
   <nav class="navbar">

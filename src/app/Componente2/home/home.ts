@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Saludar } from '../../servicios/saludar';
+import { MostrarServicios } from '../../servicios/mostrar-servicios';
+import { AlternarVista } from '../../servicios/alternar-vista';
 
 
 @Component({
@@ -8,17 +11,6 @@ import { Component } from '@angular/core';
   imports: [],
 })
 export class Home {
-setClasses() {
-throw new Error('Method not implemented.');
-}
-message: any;
-clearAlert() {
-throw new Error('Method not implemented.');
-}
-showAlert(arg0: string) {
-throw new Error('Method not implemented.');
-}
-
   titulo: string = 'Mi Primera App Angular';
 
   Desactivado1: boolean = false;
@@ -27,30 +19,9 @@ throw new Error('Method not implemented.');
   servicio:boolean = true;
   modoOscuro: boolean = false;
 
-  mostrarAlerta = false;
-  mensajeAlerta = 'Este es un mensaje de ejemplo del sistema.';
-  mostrarSoloPendientes = false;
+  constructor(public saludarService: Saludar, public mostrarServiciosService: MostrarServicios, public alternarVistaService: AlternarVista) {}
 
-  servicios: string[] = [
-    'Servicios de actualizacion',
-    'Servicios de mantenimiento',
-    'Servicios de soporte tecnico',
-    'Servicios de consultoria'
-  ];
-  
-  type: string | undefined;
-
-  saludar() {
-    console.log('Botón 1 presionado');
-    this.Desactivado2 = !this.Desactivado2; 
-  }
-
-  saludar2() {
-    console.log('Botón 2 presionado');
-    this.Desactivado1 = !this.Desactivado1; 
-  }
-
-  mostrarServicios(){
+  mostrarServicios() {
     this.servicio = !this.servicio;
   }
 
@@ -58,22 +29,15 @@ throw new Error('Method not implemented.');
     this.modoOscuro = !this.modoOscuro;
   }
 
-alternarVista() {
-this.mostrarSoloPendientes = !this.mostrarSoloPendientes;
+  alternarVista() {
+    this.alternarVistaService.alternarVista();
+  }
 
-  if (this.mostrarSoloPendientes) {
-  this.mensajeAlerta = '¡Filtro activado! Mostrando solo temas pendientes.';
-  } else {
-  this.mensajeAlerta = 'Filtro desactivado. Mostrando todos los temas.';
-  }
-  this.mostrarAlerta = true;
-  }
   abrirModal() {
-    this.mensajeAlerta = '';
-    this.mostrarAlerta = true;
+    this.alternarVistaService.abrirModal();
   }
 
   cerrarAlerta() {
-    this.mostrarAlerta = false;
+    this.alternarVistaService.cerrarAlerta();
   }
 }

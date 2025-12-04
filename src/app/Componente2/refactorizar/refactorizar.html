@@ -1,0 +1,39 @@
+<div class="dashboard-caotico">
+      <h1>Panel de Control "El Monolito"</h1>
+      
+      <!-- Lógica de autenticación mezclada en la vista -->
+      <div *ngIf="usuarioActual.rol === 'admin'" class="admin-panel">
+        <h2>Bienvenido Admin: {{ usuarioActual.nombre }}</h2>
+        <p>Último acceso: {{ usuarioActual.ultimoAcceso | date }}</p>
+      </div>
+
+      <hr>
+
+      <!-- Gestión de Productos -->
+      <div class="productos-section">
+        <h3>Calculadora de Precios</h3>
+        
+        <div *ngFor="let prod of productos">
+          <p>
+            <strong>{{ prod.nombre }}</strong> - 
+            Base: {{ prod.precio }} - 
+            <!-- Lógica de negocio hardcodeada en el template -->
+            Final: {{ calcularPrecioFinal(prod) }}
+          </p>
+        </div>
+
+        <button (click)="generarReportePDF()">Imprimir Reporte en Consola</button>
+      </div>
+
+      <hr>
+
+      <!-- ¡Otra responsabilidad más! Lista de Tareas -->
+      <div class="tareas-section">
+        <h3>Lista Rápida de Tareas</h3>
+        <input [(ngModel)]="nuevaTarea" placeholder="Nueva tarea...">
+        <button (click)="agregarTarea()">Agregar</button>
+        <ul>
+          <li *ngFor="let t of tareas">{{ t }}</li>
+        </ul>
+      </div>
+    </div>

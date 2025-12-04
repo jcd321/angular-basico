@@ -33,3 +33,18 @@
   .navbar a:hover {
     text-decoration: underline;
   }
+  .card {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 15px;
+  }
+
+.alerta-roja {
+    border-left: 2px solid red;
+    background-color: red;
+  }
+.alerta-verde {
+    border-left: 2px solid green;
+    background-color: green;
+  }

@@ -70,7 +70,7 @@ p {
     flex-wrap: wrap;
 }
 
-.buttons button {
+.buttons button:not(.btn-abrir-modal) {
     padding: 10px 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -80,7 +80,7 @@ p {
     transition: all 0.3s;
 }
 
-.buttons button:hover {
+.buttons button:not(.btn-abrir-modal):hover {
     background-color: #e9ecef;
     transform: translateY(-1px);
 }
@@ -135,9 +135,9 @@ p {
 
 /* Botón para abrir modal */
 .btn-abrir-modal {
-    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-    color: white;
-    border: none;
+    background-color: #4A90E2 !important;
+    color: white !important;
+    border: none !important;
     padding: 16px 40px;
     border-radius: 8px;
     cursor: pointer;
@@ -145,7 +145,7 @@ p {
     font-weight: 700;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.5);
     text-transform: uppercase;
     min-width: 200px;
     position: relative;
@@ -168,14 +168,14 @@ p {
 }
 
 .btn-abrir-modal:hover {
-    background: linear-gradient(135deg, #218838 0%, #1ea080 100%);
+    background-color: #357ABD !important;
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.6);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.7);
 }
 
 .btn-abrir-modal:active {
     transform: translateY(-1px);
-    box-shadow: 0 3px 10px rgba(40, 167, 69, 0.5);
+    box-shadow: 0 3px 10px rgba(74, 144, 226, 0.6);
 }
 
 /* Estilos del Modal */

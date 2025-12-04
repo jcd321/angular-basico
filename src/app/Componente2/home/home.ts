@@ -37,7 +37,7 @@ export class Home {
     this.alternarVistaService.abrirModal();
   }
 
-  cerrarAlerta() {
+  clearAlert() {
     this.alternarVistaService.cerrarAlerta();
   }
 }

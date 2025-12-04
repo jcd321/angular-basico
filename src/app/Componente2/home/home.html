@@ -21,6 +21,23 @@
     <div class="buttons">
       <button (click)="abrirModal()" class="btn-abrir-modal">Abrir Modal</button>
     </div>
+
+    @if (alternarVistaService.mostrarAlerta) {
+      <div class="modal-overlay">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Aviso del Sistema</h3>
+            <span class="close-btn" (click)="clearAlert()">&times;</span>
+          </div>
+          <div class="modal-body">
+            <p>{{ alternarVistaService.mensajeAlerta }}</p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn-cerrar" (click)="clearAlert()">Entendido</button>
+          </div>
+        </div>
+      </div>
+    }
     
     <!-- <div class="buttons">
       <button [disabled]="saludarService.Desactivado1" (click)="saludarService.saludar()">Botón 1</button>
@@ -56,13 +73,13 @@
         <div class="modal-content">
           <div class="modal-header">
             <h3>Aviso del Sistema</h3>
-            <span class="close-btn" (click)="cerrarAlerta()">&times;</span>
+            <span class="close-btn" (click)="clearAlert()">&times;</span>
           </div>
           <div class="modal-body">
             <p>{{ alternarVistaService.mensajeAlerta }}</p>
           </div>
           <div class="modal-footer">
-            <button class="btn-cerrar" (click)="cerrarAlerta()">Entendido</button>
+            <button class="btn-cerrar" (click)="clearAlert()">Entendido</button>
           </div>
         </div>
       </div>
